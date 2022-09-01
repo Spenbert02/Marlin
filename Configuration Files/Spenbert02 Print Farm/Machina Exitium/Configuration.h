@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Perditor Iunior"
+#define CUSTOM_MACHINE_NAME "Machina Exitium"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -927,7 +927,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 140 }  // changed to 140 for micro swiss direct drive (SB)
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1373,8 +1373,8 @@
 #define Y_BED_SIZE 230
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -6  // changed from 0, because custom fan shroud has offset off build plate
+#define Y_MIN_POS -13  // changed, same reason as x_min_pos change
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE + X_MIN_POS  // changed to keep x range at 230
 #define Y_MAX_POS Y_BED_SIZE + Y_MIN_POS  // changed to keep y range at 230
